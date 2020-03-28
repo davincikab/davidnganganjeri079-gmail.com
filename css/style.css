@@ -1,0 +1,167 @@
+body, html{
+    margin:0%;
+    padding:0%;
+    font-family: 'Roboto',serif;;
+    overflow: hidden;
+}
+
+#page-title{
+    font-size: 2em;
+    font-weight: bolder;
+    text-shadow: 4px 4px 4px ##17A2B8;
+    color:#fff;
+}
+h4{
+    font-weight: bolder;
+    font-size:2.0em;
+    margin: 0px;
+}
+
+#stats{
+    /*background-image: url("../images/corona.jpg");*/
+}
+
+#dash{
+    background-image: url("../images/corona.jpg");
+}
+.card p{
+    margin:0%;
+}
+
+.container-fluid, .row{
+    margin:0%;
+    padding: 0%;
+}
+
+#map{
+    height: 100vh;
+    width:100%;
+    opacity: 0.88;
+}
+
+/* Set custom fonts */
+#content{
+    overflow-y: scroll;
+    height: 100vh;
+}
+section {
+    padding: 25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+
+section:last-child{
+    margin-bottom: 200px;
+    border-bottom:none;
+}
+
+.active{
+    opacity: 1;
+}
+
+.col-md-8,.col-md-4, .col-md-3,.col-md-2,.row, .card{
+    margin: 0px;
+    padding: 0px;
+}
+.col-md-6{
+    padding: 4px;
+    margin:0px;
+}
+
+.leaflet-popup-content-wrapper{
+    padding:0%;
+    margin:0px 0px;
+}
+
+.leaflet-popup-content{
+    margin:0%;
+}
+.leaflet-pane > svg path.leaflet-interactive {
+    background-color: #3b6780;
+}
+
+.card{
+    margin-right: 5px;
+    box-shadow: 0px 2px #3b67, 0px 6px  #3b6780;
+    width: 100%;
+}
+
+.leaflet-popup-content .card-header{
+    padding: 2px;
+}
+
+.card-body{
+    padding:5px;
+}
+
+table{
+    margin:5px;
+}
+
+#content{
+    margin-right: 0px;
+}
+
+#content .card-header{
+    padding: 0px;
+    text-align: center;
+}
+
+#content h5{
+    margin:-10px 0px 0px 0px;
+    padding:0px;
+}
+
+#content .card{
+    border-radius: 0px;
+    margin-bottom: 10px;
+    background-color:#ffffff10;
+    color: white;
+}
+
+.table th, .table td{
+    padding: 0px;
+}
+
+.table {
+    font-size: 0.8em;
+}
+
+#track, #measures{
+    height:22.5vh;
+    overflow-y: scroll;
+}
+
+#measures{
+    padding:0px;
+}
+
+#measures p{
+    margin: 0px;
+}
+::-webkit-scrollbar{
+    width:8px;
+    /* background-color: #2b4e81; */
+}
+
+::-webkit-scrollbar-track{
+    background-color: white;
+    border:1px solid;
+    border-color: #fafafa;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #17A2B8;
+    border-radius:5px;
+    margin:2px;
+}
+
+@media screen and (max-width: 768px){
+    #map{
+        height:50vh;
+        width:98%;
+        margin-right:4px;
+    }
+}

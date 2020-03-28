@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Robot">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-fluid" id="dash">
+        <div class="row" >
+            <div class="col-md-4 text-center" id="stats">
+                <!-- Charts -->
+                <h5 class="text-center mt-1" id="page-title">Corona Virus Kenya</h5>
+                <div class="row mt-1">
+                    <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="card" id="total">
+                            <h4>25</h4>
+                            <p>Total cases</p>
+                        </div>
+                        <div class="card mt-1 text-warning" id="confirmed">
+                            <h4 class="">25</h4>
+                            <p>Confirmed Cases</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="card text-danger" id="death">
+                            <h4 class="">0</h4>
+                            <p>Death</p>
+                        </div>
+                        <div class="card mt-1 text-success" id="recoverd">
+                            <h4 class="">0</h4>
+                            <p>Recovered</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row container text-center">
+                    <!-- <p class="h5 mt-3 ml-5">Trend in Reported Case</p> -->
+                    <!-- <div class="row d-inline mt-5"> -->
+                        <div class="btn-group my-4 ml-1" id="">
+                          <!-- Toggle Navigation Tab -->
+                          <button class="btn btn-info">Daily</button>
+                          <button class="btn btn-info">Weekly</button>
+                          <button class="btn btn-info active">Monthly</button>
+                        </div>
+                        <div class="input-group w-50 my-4 ml-1">
+                            <select class="form-control">
+                                <option>Combined</option>                                
+                                <option>Confirmed Cases</option>
+                                <option>Recovered</option>
+                                <option>Deaths</option>
+                            </select>
+                        </div>
+                    <!-- </div> -->
+                    
+                     <div class="w-100"  style="height: 250px;">                       
+                         <canvas id="linechart" class="chartjs"></canvas>
+                     </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="map">
+                    
+                </div>
+            </div>
+            <div class="col-md-2" id="content">
+               <!-- Story on mode of spread -->
+               <div class="card w-100">
+                   <div class="card-header bg-info">
+                        <h5 class="mt-2">Spread</h5>
+                   </div>
+                   <div class="card-body text-center" >
+                    <div style="height: 70px">
+                        <canvas id="deviceChart"></canvas>
+                    </div>
+                        <p class="h5"> 4 of 47 <small>counties</small></p>
+                  </div>
+               </div>
+              <div class="card">
+                  <div class="card-header bg-info">
+                      <h5 class="mt-2">Tracking</h5>
+                      <!-- Counties Names -->
+
+                  </div>
+                  <div class="card-body text-center" id="track">
+                      <p class="h5"> 
+                        <small>approx</small> 700 <small>people</small></p>
+                       <table class="table table-bordered px-5">
+                           <tr>
+                               <th>County</th>
+                               <th>Number</th>
+                           </tr>
+                           <tbody>
+                               <tr>
+                                   <td>Nairobi</td>
+                                   <td>0</td>
+                               </tr>
+                               <tr>
+                                   <td>Nakuru</td>
+                                   <td>0</td>
+                               </tr>
+                               <tr>
+                                   <td>Narok</td>
+                                   <td>0</td>
+                               </tr>
+                               <tr>
+                                   <td>Mombasa</td>
+                                   <td>0</td>
+                               </tr>
+                           </tbody>
+                       </table>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="card-header bg-info">
+                      <h5 class="mt-2">Measures</h5>
+                  </div>
+                  <div class="card-body text-left" id="measures">
+                      <p>Personal Hygiene
+                        <ul class="ml-1">
+                            <li>Wash your hands regurarly</li>
+                            <li>Avoid touching you face</li>
+                        </ul>
+                      </p>
+                      <p>Social Distancing
+                        <ul class="ml-1">
+                            <li>Avoid overcrowded Places</li>
+                            <li>Keep a distance of 2 metres</li>
+                            <li>Avoid unnecesary movement</li>
+                            <li>60% capacity on public travel</li>
+                        </ul>
+                      </p>
+                      <p>Temporay Lockdown
+                        <ul class="ml-1">
+                            <li>Closing Markets</li>
+                            <li>No foreign flights</li>
+                            <li></li>
+                        </ul>
+                      </p>
+                  </div>
+              </div>
+                
+            <div class="card">
+                  <div class="card-header bg-info">
+                      <h5 class="mt-2">Sign and Symptoms</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul>
+                        <li>Fever</li>
+                        <li>Cough</li>
+                        <li>Shortness of breath</li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Combined line Graph -->
+    <!-- filter tabs -->
+    
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+    <script type="text/javascript" src="js/charts/Chart.min.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet-timeline-slider.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
